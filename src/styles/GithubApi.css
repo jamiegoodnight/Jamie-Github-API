@@ -1,0 +1,27 @@
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.input {
+    margin-top: 10px;
+    width: 300px;
+}
+
+.github {
+    height: 300px;
+    width: 300px;
+    background-image: url('https://i.imgur.com/a1eiwsv.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
