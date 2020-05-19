@@ -71,9 +71,7 @@ class GithubApi extends React.Component {
   
 
     handleDownload = async () => {
-        const test = this.state.test; // I am assuming that "this.state.myData"
-                                     // is an object and I wrote it to file as
-                                     // json
+        const test = this.state.pulls;
         const fileName = "reviews";
         const json = JSON.stringify(test);
         const blob = new Blob([json],{type:'application/json'});
