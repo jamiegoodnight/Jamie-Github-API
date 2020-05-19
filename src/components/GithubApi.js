@@ -56,16 +56,14 @@ class GithubApi extends React.Component {
                 pull.reviewerComments=res.data
               })
               .then(() => {
+                this.setState({
+                  ...this.state,
+                  test: {}
+                })
                 console.log("MUTANT PULLS", this.state.pulls)
               })
             })
           })
-          // .then(() => {
-          //     this.state.pulls.map(pull => {
-          //       return axios
-          //       .get(`https://api.github.com/repos/${this.state.username}/${this.state.reponame}/pulls/${this.pull.number}/comments`)
-          //     }
-          // })
           .catch(err => {
               console.log(err)
           })
@@ -118,23 +116,19 @@ class GithubApi extends React.Component {
             <Button primary onClick={this.handleSubmit}>Submit</Button>
             <Button secondary onClick={this.handleDownload}>Download</Button>
             </div>
-            <Pulls></Pulls>
-            {/* {this.state.pulls.length===0 ? 
-            <div> </div>
-             :
-             <div> 
-               {this.state.pulls.map(pull => {
-               return (
-               <>
-               <h1>{pull.title}</h1>
-               <h3>{pull.user}</h3>
-               <h3>{pull.body}</h3>
-               <h3>{pull.state}</h3>
-               </>
-      
-               )
-               })}
-             </div> } */}
+            {this.state.pulls.length > 0 && this.state.pulls[0].reviewerComments ?
+            <div>
+              {this.state.pulls.map((pull,i) => (
+                <Pulls 
+                pull={pull}
+                key={i}
+                />
+              ))}
+            </div>
+            : 
+            <div>
+            </div>
+            }
             </div>
         )
     }
