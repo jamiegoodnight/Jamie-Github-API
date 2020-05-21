@@ -116,7 +116,7 @@ class GithubApi extends React.Component {
             icon={<Icon name='user' circular link />}
             className='input'
             type='text'
-            placeholder='Username'
+            placeholder='Who owns the repo, e.g., "coolusername99"'
             name='username'
             value={this.state.username}
             onChange={this.handleChanges}
@@ -126,7 +126,7 @@ class GithubApi extends React.Component {
             icon={<Icon name='code branch' circular link />}
             className='input'
             type='text'
-            placeholder='Repository'
+            placeholder='The repo name, e.g., "My-Java-Repo"'
             name='reponame'
             value={this.state.reponame}
             onChange={this.handleChanges}
